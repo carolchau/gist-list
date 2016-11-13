@@ -2,3 +2,4 @@
 Procfile
 requirements.txt
 .Python
+pip-selfcheck.json
