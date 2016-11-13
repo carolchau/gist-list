@@ -51,6 +51,7 @@ input {
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 10px;
+  margin-bottom: 10px;
   background-color: #efefef;
 }
 
@@ -74,16 +75,8 @@ input {
   text-align: left;
 }
 
-/*
-* Footer
-*/
-
-footer {
-  margin-top: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: white;
-  font-family: 'Shrikhand', cursive !important;
-  background-color: #25376F !important;
-  text-align: center;
+.footer {
+  text-align: right;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 10px !important;
 }
