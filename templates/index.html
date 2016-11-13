@@ -31,7 +31,7 @@
           <div class="list-content">
 
         		{% for item in list %}
-              <p class="item-date"> Updated on {{item.updated_at}} </p>
+              <p class="item-date"> {{convertTime(item.updated_at)}} </p>
               <div class="list-item">
                 <!-- Gist URL -->
                 <p class="item-description">
