@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Carol Chau">
+    <title>Gist List</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Shrikhand" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <!-- Page Title + Search Bar -->
+      <div class="heading">
+        <h1>Gist List</h1>
+
+        <form class="search-user form-inline" method="POST">
+          <input type="text" name="github-username" class="form-control" placeholder="GitHub User">
+          <button type="button" name="submit-username" class="btn btn-default">Get Gists!</button>
+        </form>
+      </div>
+
+      <!-- List of Gist -->
+      <div class="list-outer-content">
+        {% if list %}
+
+          <h3> {{username}} : </h3>
+          <div class="list-content">
+
+        		{% for item in list %}
+              <p class="item-date"> Updated on {{item.updated_at}} </p>
+              <div class="list-item">
+                <!-- Gist URL -->
+                <p class="item-description">
+                  <strong> url : </strong>
+                  <a href={{item.html_url}}> {{item.html_url}} </a>
+                </p>
+                <!-- Gist Description -->
+                <p class="item-description">
+                  <strong> description: </strong>
+                  {{item.description}}
+                </p>
+              </div>
+            {% endfor %}
+
+          </div> <!-- End list-content -->
+        {% endif %}
+      </div> <!-- End list-outer-content -->
+
+      {% if error %}
+        <div class="alert alert-warning">
+        {{ error }}
+        </div>
+      {% endif %}
+
+
+      <!-- Footer
+      <footer class="footer">
+         <p> Made by Carol Chau </p>
+      </footer>
+    -->
+
+    </div> <!-- container -->
+
+  </body>
+</html>
