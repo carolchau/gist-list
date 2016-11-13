@@ -19,7 +19,7 @@
 
         <form class="search-user form-inline" method="POST">
           <input type="text" name="github-username" class="form-control" placeholder="GitHub User">
-          <button type="button" name="submit-username" class="btn btn-default">Get Gists!</button>
+          <input type="submit" name="submit-username" class="btn btn-default" value="Get Gists!">
         </form>
       </div>
 
@@ -39,10 +39,12 @@
                   <a href={{item.html_url}}> {{item.html_url}} </a>
                 </p>
                 <!-- Gist Description -->
-                <p class="item-description">
-                  <strong> description: </strong>
-                  {{item.description}}
-                </p>
+                {% if item.description != "" and item.description != null %}
+                  <p class="item-description">
+                    <strong> description: </strong>
+                    {{item.description}}
+                  </p>
+                {% endif %}
               </div>
             {% endfor %}
 
