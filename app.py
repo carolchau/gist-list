@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from datetime import datetime, date, time
+from datetime import datetime, date, time, timedelta
 import requests
 import json
 import re
@@ -8,8 +8,8 @@ import os
 app = Flask(__name__)
 
 def convertTime(timestamp):
-	result = datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
-	result = result.strftime("%B %d, %Y (%A) at %I:%M%p")
+	result = datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ") - timedelta(hours=5)
+	result = result.strftime("%B %d, %Y (%a) at %I:%M%p")
 	return result
 app.jinja_env.globals.update(convertTime=convertTime)
 

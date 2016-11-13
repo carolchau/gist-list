@@ -75,6 +75,10 @@ input {
   text-align: left;
 }
 
+strong {
+  color: #fe7e2c;
+}
+
 .footer {
   text-align: right;
   font-family: 'Open Sans', sans-serif;
