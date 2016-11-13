@@ -18,7 +18,7 @@ def gistlist():
         r = requests.get('https://api.github.com/users/' + username + '/gists')
         gistList = json.loads(r.text or r.content)
 
-        if len(gistList) == 0 or len(username) == 0:
+        if len(gistList) == 0 or len(username) == 0 or gistList["message"] == "Not Found":
             error_message = "Sorry, user does not exist or has no gists :("
             return render_template("index.html", error = error_message)
 
